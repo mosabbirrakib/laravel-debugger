@@ -163,26 +163,6 @@ Adjust the maximum number of queries and logs captured:
 ],
 ```
 
-## 🏗️ Package Structure
-
-```
-laravel-debugger/
-├── config/
-│   └── debugger.php          # Configuration file
-├── src/
-│   ├── DataCollectors/       # Data collection classes
-│   ├── Middleware/           # Debug middleware
-│   └── LaravelDebuggerServiceProvider.php
-├── resources/
-│   ├── js/                   # Vue 3 components
-│   ├── css/                  # TailwindCSS styles
-│   └── views/                # Blade templates
-├── public/                   # Compiled assets
-├── package.json              # NPM dependencies
-├── vite.config.js            # Vite configuration
-└── tailwind.config.js        # TailwindCSS configuration
-```
-
 ## 🛠️ Development
 
 To work on the package:
