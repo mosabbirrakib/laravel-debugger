@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /* Modern Container */
+    .debugger-container {
+        @apply fixed bottom-0 left-0 right-0 z-50;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    /* Modern Toggle Button - Sleek & Compact */
+    .debugger-toggle-modern {
+        @apply w-full px-4 py-2.5 bg-gradient-to-r from-slate-900/95 via-slate-800/95 to-slate-900/95;
+        @apply backdrop-blur-xl border-t border-slate-700/50;
+        @apply flex items-center justify-between;
+        @apply text-gray-200 hover:text-white transition-all duration-300;
+        @apply shadow-2xl hover:shadow-blue-500/10;
+    }
+
+    .debugger-toggle-open {
+        @apply bg-slate-900/98 border-blue-500/30;
+    }
+
+    /* Modern Panel - Clean & Spacious */
+    .debugger-panel-modern {
+        @apply bg-gradient-to-br from-slate-900/98 via-slate-800/98 to-slate-900/98;
+        @apply backdrop-blur-2xl border-t border-slate-700/50;
+        @apply shadow-2xl;
+        max-height: 70vh;
+    }
+
+    /* Modern Tabs - Horizontal Compact */
+    .debugger-tabs-modern {
+        @apply flex items-center gap-1 px-4 pt-3 pb-2;
+        @apply border-b border-slate-700/50;
+        @apply overflow-x-auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(71 85 105) transparent;
+    }
+
+    .debugger-tabs-modern::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    .debugger-tabs-modern::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .debugger-tabs-modern::-webkit-scrollbar-thumb {
+        @apply bg-slate-600 rounded-full;
+    }
+
+    /* Modern Tab Button - Sleek Pills */
+    .debugger-tab-modern {
+        @apply flex items-center gap-1.5 px-3 py-1.5;
+        @apply text-gray-400 hover:text-gray-200;
+        @apply rounded-md transition-all duration-200;
+        @apply border border-transparent;
+        @apply whitespace-nowrap flex-shrink-0;
+    }
+
+    .debugger-tab-modern:hover {
+        @apply bg-slate-700/30 border-slate-600/50;
+    }
+
+    .debugger-tab-active {
+        @apply bg-blue-500/20 text-blue-300 border-blue-500/50;
+    }
+
+    .debugger-tab-active:hover {
+        @apply bg-blue-500/25 text-blue-200;
+    }
+
+    /* Content Area - Scrollable */
+    .debugger-content-modern {
+        @apply p-4 overflow-y-auto;
+        max-height: calc(70vh - 45px);
+        scrollbar-width: thin;
+        scrollbar-color: rgb(71 85 105) transparent;
+    }
+
+    .debugger-content-modern::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .debugger-content-modern::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .debugger-content-modern::-webkit-scrollbar-thumb {
+        @apply bg-slate-700 rounded-full;
+    }
+
+    .debugger-content-modern::-webkit-scrollbar-thumb:hover {
+        @apply bg-slate-600;
+    }
+
+    /* Panel Cards - Modern Grid */
+    .debugger-metric-card {
+        @apply bg-gradient-to-br from-slate-800/50 to-slate-700/30;
+        @apply border border-slate-600/30 rounded-lg p-3;
+        @apply backdrop-blur-sm;
+    }
+
+    .debugger-metric-label {
+        @apply text-xs font-medium text-gray-400 mb-1;
+    }
+
+    .debugger-metric-value {
+        @apply text-lg font-bold text-white;
+    }
+
+    /* Log Items - Compact */
+    .debugger-log-item {
+        @apply p-2.5 rounded-md border border-slate-700/50 mb-2;
+        @apply bg-slate-800/30 hover:bg-slate-800/50 transition-colors;
+    }
+
+    /* Query Items - Clean */
+    .debugger-query-item {
+        @apply p-3 rounded-md border border-slate-700/50 mb-2;
+        @apply bg-slate-800/30 hover:bg-slate-800/50;
+    }
+
+    .debugger-query-sql {
+        @apply font-mono text-xs text-gray-300 bg-slate-900/50 p-2 rounded;
+        @apply border border-slate-700/30;
+    }
+
+    /* Badges - Compact & Colorful */
+    .debugger-badge-success {
+        @apply px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded border border-emerald-500/30;
+    }
+
+    .debugger-badge-warning {
+        @apply px-2 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-300 rounded border border-amber-500/30;
+    }
+
+    .debugger-badge-error {
+        @apply px-2 py-0.5 text-xs font-semibold bg-red-500/20 text-red-300 rounded border border-red-500/30;
+    }
+
+    .debugger-badge-info {
+        @apply px-2 py-0.5 text-xs font-semibold bg-blue-500/20 text-blue-300 rounded border border-blue-500/30;
+    }
+
+    .debugger-badge-debug {
+        @apply px-2 py-0.5 text-xs font-semibold bg-purple-500/20 text-purple-300 rounded border border-purple-500/30;
+    }
+
+    /* HTTP Method Badges - Colorful */
+    .debugger-method-get {
+        @apply px-2 py-0.5 text-xs font-bold bg-blue-500/20 text-blue-300 rounded;
+    }
+
+    .debugger-method-post {
+        @apply px-2 py-0.5 text-xs font-bold bg-green-500/20 text-green-300 rounded;
+    }
+
+    .debugger-method-put {
+        @apply px-2 py-0.5 text-xs font-bold bg-amber-500/20 text-amber-300 rounded;
+    }
+
+    .debugger-method-delete {
+        @apply px-2 py-0.5 text-xs font-bold bg-red-500/20 text-red-300 rounded;
+    }
+
+    /* Section Headers - Subtle */
+    .debugger-section-title {
+        @apply text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2;
+    }
+
+    /* Data Display - Clean */
+    .debugger-data-row {
+        @apply flex justify-between items-start py-1.5 text-sm border-b border-slate-700/30;
+    }
+
+    .debugger-data-label {
+        @apply text-gray-400 font-medium text-xs;
+    }
+
+    .debugger-data-value {
+        @apply text-gray-200 text-xs;
+    }
+
+    /* Progress Bars - Sleek */
+    .debugger-progress-bar {
+        @apply h-2 bg-slate-700/50 rounded-full overflow-hidden;
+    }
+
+    .debugger-progress-fill {
+        @apply h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-300;
+    }
+
+    /* Collapsible Sections */
+    .debugger-collapsible-trigger {
+        @apply flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-gray-200;
+        @apply cursor-pointer transition-colors py-1;
+    }
+
+    .debugger-collapsible-content {
+        @apply mt-2 pl-4 border-l-2 border-slate-700/50 text-xs;
+    }
+
+    /* Empty States - Friendly */
+    .debugger-empty-state {
+        @apply text-center py-8 text-gray-500;
+    }
+
+    .debugger-empty-icon {
+        @apply w-12 h-12 mx-auto mb-3 text-gray-600;
+    }
+
+    .debugger-empty-text {
+        @apply text-sm;
+    }
+
+    /* Animations */
+    .slide-up-enter-active,
+    .slide-up-leave-active {
+        transition: all 0.3s ease-out;
+    }
+
+    .slide-up-enter-from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    .slide-up-leave-to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@layer base {
+    #laravel-debugger {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+@layer components {
+    .debugger-panel {
+        @apply bg-debugger-panel rounded-lg p-4 border border-debugger-border;
+    }
+
+    .debugger-badge {
+        @apply inline-flex items-center px-2 py-1 rounded text-xs font-medium;
+    }
+
+    .debugger-badge-primary {
+        @apply bg-debugger-accent/20 text-debugger-accent border border-debugger-accent/30;
+    }
+
+    .debugger-badge-success {
+        @apply bg-debugger-success/20 text-debugger-success border border-debugger-success/30;
+    }
+
+    .debugger-badge-warning {
+        @apply bg-debugger-warning/20 text-debugger-warning border border-debugger-warning/30;
+    }
+
+    .debugger-badge-error {
+        @apply bg-debugger-error/20 text-debugger-error border border-debugger-error/30;
+    }
+
+    .debugger-badge-info {
+        @apply bg-debugger-info/20 text-debugger-info border border-debugger-info/30;
+    }
+
+    .debugger-glass {
+        @apply bg-debugger-bg/90 backdrop-blur-md border border-debugger-border/50;
+    }
+
+    .debugger-tab {
+        @apply px-4 py-2 text-sm font-medium text-debugger-muted hover:text-debugger-text transition-all duration-200 border-b-2 border-transparent hover:border-debugger-accent/50 cursor-pointer;
+    }
+
+    .debugger-tab-active {
+        @apply text-debugger-accent border-debugger-accent;
+    }
+
+    .debugger-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #475569 #1e293b;
+    }
+
+    .debugger-scrollbar::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    .debugger-scrollbar::-webkit-scrollbar-track {
+        @apply bg-debugger-panel rounded;
+    }
+
+    .debugger-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-debugger-border rounded hover:bg-debugger-accent/50;
+    }
+
+    .debugger-code {
+        @apply font-mono text-xs bg-debugger-bg/50 px-2 py-1 rounded border border-debugger-border;
+    }
+}
